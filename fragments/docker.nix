@@ -6,5 +6,5 @@
     enableOnBoot = true;
     autoPrune.enable = false;
     rootless.enable = false;
-  }
+  };
 }
