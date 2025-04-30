@@ -1,3 +1,5 @@
+{ config, lib, pkgs, ... }:
+
 {
   # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -18,6 +20,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    git
     nano
     nfs-utils
     wget
