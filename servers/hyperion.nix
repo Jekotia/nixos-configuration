@@ -24,5 +24,6 @@
       device = "10.0.0.10:/mnt/storage/servers/saturn/hyperion";
       type = "nfs";
       options = "defaults";
+    };
   };
 }
