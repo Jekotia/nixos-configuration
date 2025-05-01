@@ -17,12 +17,12 @@
   fileSystems = {
     "/multimedia" = {
       device = "//10.0.0.10/multimedia";
-      type = "cifs";
+      fsType = "cifs";
       options = "credentials=/home/jekotia/.smbcredentials/multimedia,uid=1000,gid=1000";
     };
     "/srv/ref" = {
       device = "10.0.0.10:/mnt/storage/servers/saturn/hyperion";
-      type = "nfs";
+      fsType = "nfs";
       options = "defaults";
     };
   };
