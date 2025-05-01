@@ -21,15 +21,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    curl
     git
-    nano
-    nfs-utils
-    wget
-    spice-vdagent
-    ncdu
     htop
+    jq
+    nano
+    ncdu
     tmux
+    wget
   ];
+
 #source = builtins.fetchGit {
 #  url = "https://github.com/hlissner/doom-emacs";
 #  rev = "07fca786154551f90f36535bfb21f8ca4abd5027";
