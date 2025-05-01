@@ -16,6 +16,7 @@
   };
   security.sudo.wheelNeedsPassword = false;
   programs.zsh.enable = true;
+  programs.ssh.startAgent = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
