@@ -9,5 +9,6 @@
     auth = "none"; # none or password
     port = 4444;
     user = "jekotia";
+    host = 0.0.0.0;
   };
 }
