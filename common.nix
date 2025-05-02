@@ -1,6 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
+# TEMP
+  # Disable firewall during testing phase
+  networking.firewall.enable = false;
+# END TEMP
+
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
