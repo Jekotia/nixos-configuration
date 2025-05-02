@@ -4,6 +4,7 @@
   imports = [
       ./common.nix
       ../fragments/docker.nix
+      ../fragments/code-server.nix
     ];
 
   networking.hostName = "hyperion"; # Define your hostname.
