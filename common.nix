@@ -32,6 +32,8 @@
     jq
     nano
     ncdu
+    screen
+    shellcheck
     tmux
     wget
   ];
