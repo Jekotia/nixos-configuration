@@ -6,6 +6,7 @@
   networking.firewall.enable = false;
 # END TEMP
 
+  networking.domain = "jekotia.net";
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
@@ -20,6 +21,7 @@
     ];
   };
   security.sudo.wheelNeedsPassword = false;
+
   programs.zsh.enable = true;
   programs.ssh.startAgent = true;
 
