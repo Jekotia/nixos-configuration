@@ -7,10 +7,10 @@
 # END TEMP
 
   networking.domain = "jekotia.net";
-  # Set your time zone.
+  #-> Set time zone.
   time.timeZone = "America/Toronto";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  #-> Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jekotia = {
     uid = 1000;
     isNormalUser = true;
@@ -20,23 +20,38 @@
       tree
     ];
   };
+  #-> Passwordless sudo
   security.sudo.wheelNeedsPassword = false;
 
+  #-> My preferred shell
   programs.zsh.enable = true;
+
+
   programs.ssh.startAgent = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+
+  nixpkgs.config.allowUnfree = true;
+  #-> List packages installed in system profile. To search, run:
+  #-> $ nix search wget
   environment.systemPackages = with pkgs; [
+    #bc
     curl
+    diffutils
     git
+    gnugrep
+    gzip
     htop
+    iotop
     jq
+    mc
     nano
     ncdu
+    ookla-speedtest
     screen
     shellcheck
+    sysstat
     tmux
+    unzip
     wget
   ];
 

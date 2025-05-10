@@ -6,14 +6,10 @@
       ../fragments/docker.nix
     ];
 
-  networking.hostName = "nixos"; # Define your hostname.
+  # Set hostname.
+  networking.hostName = "nixos";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-#  environment.systemPackages = with pkgs; [
-#  ];
-
-  # fstab entries
+  #-> fstab entries
   fileSystems = {
     "/multimedia" = {
       device = "//10.0.0.10/multimedia";

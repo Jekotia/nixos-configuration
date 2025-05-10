@@ -3,10 +3,11 @@
 {
   imports = [
     ../common.nix
+    ../fragments/nut-client.nix
   ];
 
 
-  # Use the GRUB 2 boot loader.
+  #-> Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   # boot.loader.grub.efiSupport = true;
   # boot.loader.grub.efiInstallAsRemovable = true;
@@ -14,19 +15,25 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
+  #-> Add my SSH public key to authorisedkeys
   users.users.jekotia.openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRvdduzwOuCMFHXEDOyH1gB/WiQXO/mf/D+tWllIXhEqUPap73jmVU/Rx3MMLPaitHpTQ1ULl8UnwxsI4ZnZeRMlvomGtUHXL2wMFViEXSV3TJOt9KJu6hj5HR9/uI/c8z3iu6pA06oGyXHJ8qv+woF1f2icojmUk0tIH3Fqa3SMNdmW1u+kw1dk0UcxtV8XgLb+hRVZqVPbopttwn6Er7CT45ad00dog7YAIlm3gCFOlyIBJzTvCOcgInU7jpnnmXJyIkEIzjmphS0GRwr4sHNZSN8kOOy+H3y9XhM7fO4WNHRhIUPY7TScFormAJW4fZKzopiGp/1jiSB1yN6jC1 jameli@jupiter" ];
 
+  #-> Required for non-nix binaries to run, e.g. VSCode Remote Server
   programs.nix-ld.enable = true;
 
+  #-> Install server & VM specific packages
   environment.systemPackages = with pkgs; [
+    cifs-utils
     nfs-utils
     nil
+    #reptyr
     spice-vdagent
   ];
 
+  #-> Guest services for Proxmox VE
   services.qemuGuest.enable = true;
 
-    # Enable the OpenSSH daemon.
+  #-> Enable & configure the OpenSSH daemon.
   services.openssh = {
     enable = true;
     settings ={ 
