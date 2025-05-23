@@ -34,6 +34,7 @@
   #-> List packages installed in system profile. To search, run:
   #-> $ nix search wget
   environment.systemPackages = with pkgs; [
+    act # local runner for github workflows
     #bc
     curl
     diffutils
